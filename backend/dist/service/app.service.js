@@ -42,12 +42,36 @@ class CarAdvertService {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const req = yield app_repo_1.default.findCarAdvertById(id);
-                console.log(req);
+                if (req) {
+                    return {
+                        message: 'Car Advert information is fetched successfully',
+                        data: req,
+                        statusCode: 200,
+                    };
+                }
                 return {
-                    message: 'Car Advert information is fetched successfully',
-                    data: req,
-                    statusCode: 200,
+                    message: 'Car Advert Id does not exist',
+                    data: null,
+                    statusCode: 400,
                 };
+            }
+            catch (error) {
+                throw new Error(error.message);
+            }
+        });
+    }
+    // ● Users can delete posts.
+    static deleteCarAdvertPosts() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const req = yield app_repo_1.default.removeCarAdvertPosts();
+                if (req) {
+                    return {
+                        message: 'Car Advert Posts deleted successfully',
+                        data: null,
+                        statusCode: 400,
+                    };
+                }
             }
             catch (error) {
                 throw new Error(error.message);

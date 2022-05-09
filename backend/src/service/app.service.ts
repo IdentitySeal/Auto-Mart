@@ -22,16 +22,39 @@ class CarAdvertService {
             throw new Error(error.message);
         }
     }
+
     // ● Users can view a specific car
     static async viewSpecificCarAdvertById(id: string) {
         try {
             const req = await CarAdvertsRepo.findCarAdvertById(id);
-            console.log(req);
+            if(req){
+                return {
+                    message: 'Car Advert information is fetched successfully',
+                    data: req,
+                    statusCode: 200,
+                };
+            }
             return {
-                message: 'Car Advert information is fetched successfully',
-                data: req,
-                statusCode: 200,
+                message: 'Car Advert Id does not exist',
+                data: null,
+                statusCode: 400,
             };
+            
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
+    // ● Users can delete posts.
+    static async deleteCarAdvertPosts(){
+        try {
+            const req = await CarAdvertsRepo.removeCarAdvertPosts()
+            if(req){
+                return {
+                    message: 'Car Advert Posts deleted successfully',
+                    data: null,
+                    statusCode: 400,
+                };
+            }
         } catch (error) {
             throw new Error(error.message);
         }

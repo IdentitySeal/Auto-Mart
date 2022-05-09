@@ -11,6 +11,10 @@ class CarAdvertsRepo {
     static findCarAdvertById(id :string){
         return CarAdverModel.findById(id)
     }
+    static removeCarAdvertPosts(){
+        return CarAdverModel.remove({})
+    }
+
 
 }
 

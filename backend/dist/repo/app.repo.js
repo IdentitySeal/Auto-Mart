@@ -11,6 +11,9 @@ class CarAdvertsRepo {
     static findCarAdvertById(id) {
         return app_model_1.CarAdverModel.findById(id);
     }
+    static removeCarAdvertPosts() {
+        return app_model_1.CarAdverModel.remove({});
+    }
 }
 exports.default = CarAdvertsRepo;
 //# sourceMappingURL=app.repo.js.map
