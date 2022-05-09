@@ -40,9 +40,17 @@ AppController.post(app_routes_1.AppRoutes.POST_CAR_ADVERT, uploadImg, (req, res)
         throw new Error(error.message);
     }
 }));
-AppController.get(app_routes_1.AppRoutes.VIEW_CAR_ADVERT, (req, res) => {
-    res.send("TESTING");
-});
+AppController.get(app_routes_1.AppRoutes.VIEW_CAR_ADVERT, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const carAdvertId = req.params.carAdvertId;
+        console.log(carAdvertId);
+        const data = yield app_service_1.default.viewSpecificCarAdvertById(carAdvertId);
+        res.json(data);
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}));
 AppController.get(app_routes_1.AppRoutes.ALL_CAR_ADVERTS, (req, res) => {
     res.send("TESTING");
 });

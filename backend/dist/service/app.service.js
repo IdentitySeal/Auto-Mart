@@ -37,6 +37,23 @@ class CarAdvertService {
             }
         });
     }
+    // ● Users can view a specific car
+    static viewSpecificCarAdvertById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const req = yield app_repo_1.default.findCarAdvertById(id);
+                console.log(req);
+                return {
+                    message: 'Car Advert information is fetched successfully',
+                    data: req,
+                    statusCode: 200,
+                };
+            }
+            catch (error) {
+                throw new Error(error.message);
+            }
+        });
+    }
 }
 exports.default = CarAdvertService;
 //# sourceMappingURL=app.service.js.map

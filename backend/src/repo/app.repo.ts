@@ -8,6 +8,10 @@ class CarAdvertsRepo {
     static checkIfCarAdvertExists (data :ICarAdvert){
         return CarAdverModel.findOne({brand: data.brand,model: data.model})
     }
+    static findCarAdvertById(id :string){
+        return CarAdverModel.findById(id)
+    }
+
 }
 
 export default CarAdvertsRepo;
