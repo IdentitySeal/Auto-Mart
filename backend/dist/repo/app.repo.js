@@ -8,6 +8,9 @@ class CarAdvertsRepo {
     static checkIfCarAdvertExists(data) {
         return app_model_1.CarAdverModel.findOne({ brand: data.brand, model: data.model });
     }
+    static findCarAdvertById(id) {
+        return app_model_1.CarAdverModel.findById(id);
+    }
 }
 exports.default = CarAdvertsRepo;
 //# sourceMappingURL=app.repo.js.map
