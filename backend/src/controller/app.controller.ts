@@ -37,7 +37,6 @@ AppController.post(AppRoutes.POST_CAR_ADVERT, uploadImg, async (req: Request, re
 AppController.get(AppRoutes.VIEW_CAR_ADVERT, async (req: Request, res: Response) => {
     try {
         const carAdvertId = req.params.carAdvertId;
-        console.log(carAdvertId);
         const data = await CarAdvertService.viewSpecificCarAdvertById(carAdvertId);
         res.json(data);
     } catch (error) {
@@ -49,8 +48,14 @@ AppController.get(AppRoutes.VIEW_CAR_ADVERT, async (req: Request, res: Response)
 AppController.get(AppRoutes.ALL_CAR_ADVERTS, (req: Request, res: Response) => {
     res.send("TESTING")
 })
-AppController.post(AppRoutes.DELETE_CAR_ADVERT, (req: Request, res: Response) => {
-    res.send("TESTING")
+
+AppController.delete(AppRoutes.DELETE_CAR_ADVERT, async (req: Request, res: Response) => {
+    try {
+        const data = await CarAdvertService.deleteCarAdvertPosts();
+        res.json(data);
+    } catch (error) {
+        
+    }
 })
 
 

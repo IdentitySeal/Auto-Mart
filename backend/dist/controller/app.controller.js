@@ -43,7 +43,6 @@ AppController.post(app_routes_1.AppRoutes.POST_CAR_ADVERT, uploadImg, (req, res)
 AppController.get(app_routes_1.AppRoutes.VIEW_CAR_ADVERT, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const carAdvertId = req.params.carAdvertId;
-        console.log(carAdvertId);
         const data = yield app_service_1.default.viewSpecificCarAdvertById(carAdvertId);
         res.json(data);
     }
@@ -54,8 +53,13 @@ AppController.get(app_routes_1.AppRoutes.VIEW_CAR_ADVERT, (req, res) => __awaite
 AppController.get(app_routes_1.AppRoutes.ALL_CAR_ADVERTS, (req, res) => {
     res.send("TESTING");
 });
-AppController.post(app_routes_1.AppRoutes.DELETE_CAR_ADVERT, (req, res) => {
-    res.send("TESTING");
-});
+AppController.delete(app_routes_1.AppRoutes.DELETE_CAR_ADVERT, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const data = yield app_service_1.default.deleteCarAdvertPosts();
+        res.json(data);
+    }
+    catch (error) {
+    }
+}));
 exports.default = AppController;
 //# sourceMappingURL=app.controller.js.map
