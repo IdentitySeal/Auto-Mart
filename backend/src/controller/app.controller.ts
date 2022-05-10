@@ -32,8 +32,6 @@ AppController.post(AppRoutes.POST_CAR_ADVERT, uploadImg, async (req: Request, re
 })
 
 
-
-
 AppController.get(AppRoutes.VIEW_CAR_ADVERT, async (req: Request, res: Response) => {
     try {
         const carAdvertId = req.params.carAdvertId;
