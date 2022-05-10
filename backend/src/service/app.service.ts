@@ -44,7 +44,7 @@ class CarAdvertService {
             throw new Error(error.message);
         }
     }
-    // ● Users can delete posts.
+    // e Users can delete posts.
     static async deleteCarAdvertPosts(){
         try {
             const req = await CarAdvertsRepo.removeCarAdvertPosts()

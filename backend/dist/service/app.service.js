@@ -60,7 +60,7 @@ class CarAdvertService {
             }
         });
     }
-    // ● Users can delete posts.
+    // e Users can delete posts.
     static deleteCarAdvertPosts() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
