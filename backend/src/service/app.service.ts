@@ -19,7 +19,7 @@ class CarAdvertService {
                 statusCode: 400,
             };
         } catch (error) {
-            throw new Error(error.message);
+            throw new Error(error);
         }
     }
 
@@ -41,7 +41,7 @@ class CarAdvertService {
             };
             
         } catch (error) {
-            throw new Error(error.message);
+            throw new Error(error);
         }
     }
     // e Users can delete posts.
@@ -56,7 +56,27 @@ class CarAdvertService {
                 };
             }
         } catch (error) {
-            throw new Error(error.message);
+            throw new Error(error);
+        }
+    }
+
+    static async getAllCarAdvertPosts(){
+        try {
+            const req = await CarAdvertsRepo.allCarAdvertPosts();
+            if(req.length > 0){
+                return {
+                    message: 'All Car Advert information is fetched successfully',
+                    data: req,
+                    statusCode: 200,
+                };
+            }
+            return {
+                message: 'Car Advert Post is Empty',
+                data: null,
+                statusCode: 400,
+            };
+        } catch (error) {
+            throw new Error(error);
         }
     }
 

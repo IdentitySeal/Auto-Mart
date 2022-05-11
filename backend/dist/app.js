@@ -26,8 +26,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 app.use((0, cors_1.default)());
-app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.use(body_parser_1.default.json());
+app.use(body_parser_1.default.json({ limit: '50mb' }));
+app.use(body_parser_1.default.urlencoded({ limit: '50mb', extended: true }));
 // app.use(AppConfigs.APP_ROUTE, AppController);
 app.use(process.env.APP_ROUTE, app_controller_1.default);
 // uploaded img path

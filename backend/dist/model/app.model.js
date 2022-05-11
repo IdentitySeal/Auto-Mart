@@ -9,7 +9,7 @@ const CarAdverSchema = new mongoose_1.Schema({
     year: { required: true, type: 'Number' },
     model: { required: true, type: 'String' },
     color: { required: true, type: 'String' },
-    image: { required: false, type: 'String' },
+    image: { required: true, type: 'String' },
 }, { timestamps: true });
 exports.CarAdverModel = (0, mongoose_1.model)('car_adverts', CarAdverSchema);
 //# sourceMappingURL=app.model.js.map

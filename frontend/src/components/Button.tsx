@@ -6,7 +6,7 @@ interface IButton {
 }
 const Button = (props:IButton) => {
   return (
-      <button className="h-10 px-6 font-semibold rounded-md bg-black text-white" onClick={props.onClick}>
+      <button className="h-10 px-6 my-3  font-semibold rounded-md bg-[#008001] text-white" onClick={props.onClick}>
           {props.title}
       </button>
   )

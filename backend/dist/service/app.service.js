@@ -33,7 +33,7 @@ class CarAdvertService {
                 };
             }
             catch (error) {
-                throw new Error(error.message);
+                throw new Error(error);
             }
         });
     }
@@ -56,7 +56,7 @@ class CarAdvertService {
                 };
             }
             catch (error) {
-                throw new Error(error.message);
+                throw new Error(error);
             }
         });
     }
@@ -74,7 +74,29 @@ class CarAdvertService {
                 }
             }
             catch (error) {
-                throw new Error(error.message);
+                throw new Error(error);
+            }
+        });
+    }
+    static getAllCarAdvertPosts() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const req = yield app_repo_1.default.allCarAdvertPosts();
+                if (req.length > 0) {
+                    return {
+                        message: 'All Car Advert information is fetched successfully',
+                        data: req,
+                        statusCode: 200,
+                    };
+                }
+                return {
+                    message: 'Car Advert Post is Empty',
+                    data: null,
+                    statusCode: 400,
+                };
+            }
+            catch (error) {
+                throw new Error(error);
             }
         });
     }

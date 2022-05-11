@@ -14,6 +14,9 @@ class CarAdvertsRepo {
     static removeCarAdvertPosts() {
         return app_model_1.CarAdverModel.remove({});
     }
+    static allCarAdvertPosts() {
+        return app_model_1.CarAdverModel.find({});
+    }
 }
 exports.default = CarAdvertsRepo;
 //# sourceMappingURL=app.repo.js.map
