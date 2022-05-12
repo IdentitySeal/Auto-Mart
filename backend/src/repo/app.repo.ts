@@ -6,13 +6,16 @@ class CarAdvertsRepo {
         return CarAdverModel.create(data);
     }
     static checkIfCarAdvertExists (data :ICarAdvert){
-        return CarAdverModel.findOne({brand: data.brand,model: data.model})
+        return CarAdverModel.findOne({brand: data.brand,model: data.model});
     }
     static findCarAdvertById(id :string){
-        return CarAdverModel.findById(id)
+        return CarAdverModel.findById(id);
     }
     static removeCarAdvertPosts(){
-        return CarAdverModel.remove({})
+        return CarAdverModel.remove({});
+    }
+    static allCarAdvertPosts(){
+        return CarAdverModel.find({});
     }
 
 

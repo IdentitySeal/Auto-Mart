@@ -8,7 +8,7 @@ const CarAdverSchema = new Schema<ICarAdvert>({
     year: {required: true,type: 'Number'},
     model: {required: true,type: 'String'},
     color: {required: true,type: 'String'},
-    image: {required: false,type: 'String'},
+    image: {required: true,type: 'String'},
 }, {timestamps: true},
 );
 

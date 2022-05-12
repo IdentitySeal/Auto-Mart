@@ -15,10 +15,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(cors())
 
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 // app.use(AppConfigs.APP_ROUTE, AppController);
 app.use(process.env.APP_ROUTE, AppController);
 
