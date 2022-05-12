@@ -5,7 +5,6 @@ interface FileUploadType {
     onChange?: (e:ChangeEvent<HTMLInputElement>) => void
 }
 const FileUploader = (props:FileUploadType) => {
-    
     return (
         <div className ="my-3">
             <label className="block">

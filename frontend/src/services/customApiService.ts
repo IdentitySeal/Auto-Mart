@@ -12,11 +12,11 @@ export interface ICarAdvert {
 
 }
 class CustomApiService {
-    static baseUrl = 'http://localhost:4000/api'
-    static createAdvert_url = `${this.baseUrl}/car-advert/post`;
-    static listAdvert_url = `${this.baseUrl}/car-advert/all`;
-    static viewAdvert_url = (id:string) => `${this.baseUrl}/car-advert/view/${id}`;
-    static deleteAdvert_url = `${this.baseUrl}/car-advert/delete`;
+    // static baseUrl = 'http://localhost:4000/api'
+    static createAdvert_url = `/api/car-advert/post`;
+    static listAdvert_url = `/api/car-advert/all`;
+    static viewAdvert_url = (id:string) => `/api/car-advert/view/${id}`;
+    static deleteAdvert_url = `/api/car-advert/delete`;
 
     static async postCarAdvert(data:ICarAdvert) {
         try {

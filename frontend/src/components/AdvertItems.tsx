@@ -6,7 +6,7 @@ import Spinner from './Spinner';
 
 const AdvertItems = () => {
   const [adverts, setAdverts] = useState<Array<ICarAdvert>>([]);
-  const [loading , setLoading ] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [deleteAdvert, setDeleteAdvert] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const AdvertItems = () => {
       {loading ?
         <>
           {
-           adverts && adverts.length > 0 ? (
+            adverts && adverts.length > 0 ? (
               <>
                 {
                   adverts.map((advert) => {
@@ -58,24 +58,24 @@ const AdvertItems = () => {
                               Color: {advert.color}
                             </dd>
                           </dl>
-                        
+
                           <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
                             {advert.description}
                           </p>
                         </div>
-                       
+
                       </main>
                     )
                   })
                 }
                 <div className="flex flex-row align-center justify-center">
 
-                 <Button onClick={deleteAdvertPosts} title="Delete All Advert"/>
-                        <Modal showModal={deleteAdvert} setShowModal={setDeleteAdvert}>
-                          <div>
-                            Deleted Sucessfully
-                          </div>
-                        </Modal>
+                  <Button onClick={deleteAdvertPosts} title="Delete All Advert" />
+                  <Modal showModal={deleteAdvert} setShowModal={setDeleteAdvert}>
+                    <div>
+                      Deleted Sucessfully
+                    </div>
+                  </Modal>
                 </div>
               </>
             ) : (<div className="flex flex-row items-center justify-center h-screen">
