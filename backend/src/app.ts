@@ -19,11 +19,16 @@ app.use(cors())
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-// app.use(AppConfigs.APP_ROUTE, AppController);
 app.use(process.env.APP_ROUTE, AppController);
 
 // uploaded img path
 app.use('/upload',express.static(path.resolve(__dirname, "./upload")));
+
+app.use(express.static(path.join(__dirname, '../../frontend/build')));
+
+app.get('/advert', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));
+});
 
 
 
